@@ -2,7 +2,7 @@ set nocompatible
 filetype off                
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 call vundle#end()            
 filetype plugin indent on
 
@@ -14,7 +14,6 @@ set showtabline=0
 set guifont=Monaco:h13
 syntax enable
 let g:solarized_termcolors=256
-colorscheme solarized
 set nowrap
 set fileformat=unix
 set cindent
