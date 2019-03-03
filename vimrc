@@ -37,7 +37,7 @@ set autoread
 set cursorline
 set cursorcolumn
 
-map <F5> :Autopep8<CR> :w<CR> :call RunPython()<CR>
+map <F5> :w<CR> :call RunPython()<CR>
 function RunPython()
     let mp = &makeprg
     let ef = &errorformat
@@ -57,7 +57,6 @@ Plugin 'Lokaltog/vim-powerline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Yggdroot/indentLine'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'tell-k/vim-autopep8'
 Plugin 'scrooloose/nerdcommenter'
 
 
@@ -74,11 +73,17 @@ let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_cache_omnifunc=0
 let g:ycm_complete_in_strings = 1
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-inoremap <expr> <CR>       pumvisible() ? '<C-y>' : '\<CR>'
-inoremap <expr> <Down>     pumvisible() ? '\<C-n>' : '\<Down>'
-inoremap <expr> <Up>       pumvisible() ? '\<C-p>' : '\<Up>'
-inoremap <expr> <PageDown> pumvisible() ? '\<PageDown>\<C-p>\<C-n>' : '\<PageDown>'
-inoremap <expr> <PageUp>   pumvisible() ? '\<PageUp>\<C-p>\<C-n>' : '\<PageUp>'
+
+" inoremap <expr> <CR>       pumvisible() ? '<C-y>' : '\<CR>'
+" inoremap <expr> <Down>     pumvisible() ? '\<C-n>' : '\<Down>'
+" inoremap <expr> <Up>       pumvisible() ? '\<C-p>' : '\<Up>'
+" inoremap <expr> <PageDown> pumvisible() ? '\<PageDown>\<C-p>\<C-n>' : '\<PageDown>'
+" inoremap <expr> <PageUp>   pumvisible() ? '\<PageUp>\<C-p>\<C-n>' : '\<PageUp>'
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 map <F2> :NERDTreeToggle<CR>
 let NERDTreeChDirMode=1
@@ -89,7 +94,5 @@ let NERDTreeWinSize=25
 
 let g:indentLine_char='┆'
 let g:indentLine_enabled = 1
-
-let g:autopep8_disable_show_diff=1
 
 let mapleader=','
